@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="images/logo.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="fakeindex.css">
+    <script src="openNav.js"></script>
+    <script src="about.js"></script>
+</head>
+<body onload="Retrieve();">
+    <center>
+        <div class="intro">
+            <img src="images/midlogo.PNG" >
+            
+        </div></center>
+        <button onclick="profile()" style=" float: right; background-color: black; color: white; width: 50px; height: 50px;"> Profile</button>
+       <div id="profile">
+           <center>
+               <a href="javascript:void(0)" onclick="closeprofile()" style="position: absolute;" id="close">x</a>
+               <img src="images/avatar.png" style="border-radius: 50%; width: 0;" id="img">
+           <p id="wel">Welcome:</p>
+           <p id="welcome">Loading user data.....</p>
+           <a href="donate.html" id="dbtn" style="font-size: 0;"> Donate
+        </a>
+        <a href="article.html" id="pbtn" style="font-size: 0;">Partner</a>
+       </div></center>
+    <div id="nav-bar">
+        <button onclick="opennav()" class="opennav" id="o">&#9776;</button>
+        <a href="javascript:void(0)" onclick="closenav()" id="closenav" style="position: absolute; left: 90%;">X</a>
+        <a href="index.html" id="close-home">
+            <img src="images/pop.PNG">
+            <span>Home</span>
+        </a>
+        <a href="aboutus.html" id="close-about">
+            <img src="images/about.PNG">
+            <span>About Us</span>
+        </a>
+        <a href="error.html" id="close-game">
+            <img src="images/gam.PNG" >
+            <span>Games</span>
+        </a>
+        <a href="error.html" id="close-social">
+            <img src="images/soc.PNG" >
+            <span>Social</span>
+        </a>
+    <li><a href="error.html">Coding & More</a></li>
+    </div>
+<center>
+<h1>This site is still under developement <br> for more info call: 09037569616</h1>
+<p>Or <br> you can donate to sponsor the the <a href="donate.html" style="color: blue; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Site</a> creation</p>
+<p><b>Tips</b> Test other features of the this site and enjoy!</p>
+</center>
+   
+</div>
+</body>
+</html>
