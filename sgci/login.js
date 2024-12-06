@@ -7,7 +7,7 @@ function getCookie(name) {
         while (c.charAt(0) === ' ') c = c.substring(1, c.length);
         if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
-    return null; // Return null if the cookie doesn't exist
+    return nouser();; // Return null if the cookie doesn't exist
 }
 
 // Function to handle login form submission
@@ -30,4 +30,8 @@ document.getElementById("login-form").addEventListener("submit", function(event)
         // If credentials do not match, show an error message
         alert("Invalid email or password.");
     }
+    
 });
+function nouser(){
+        alert(" No user data found go and sign up");
+}
