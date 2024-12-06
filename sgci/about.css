@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+  
+.intro{
+    background-color: black;
+    height: 70px;
+    line-height: 70px;
+}
+.intro img{
+    height: 70px;
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700vh;
+    font-family: cursive;
+}
+
+/** nav-bar**/
+span{
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: white;
+    display: list-item;
+    list-style: none;
+    margin-bottom: 15px;
+}
+#nav-bar a{
+    color: black;
+}
+#nav-bar img:hover{
+    background-color:rgb(204, 204, 204);
+    border-radius: 30%;
+    
+}
+.opennav{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    z-index: 4;
+    background-color: black;
+    color: white;
+}
+#close-home{
+    margin-top: 40px;
+}
+
+#nav-bar{
+    background-color:white;
+    position: fixed;
+    width: 71px;
+    margin: 0;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 1;
+    box-shadow: 20px black;
+    overflow-x: scroll;
+}
+#nav-bar a{
+    font-size: 0;
+}
+#nav-bar img{
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+/** End of Nav-bar**/
+#open{
+    background-color: black;
+    color: white;
+    position: fixed;
+    z-index: 2;
+    width: 50px;
+    margin-bottom: 50px;
+    transition: 0.5;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50pxvw;
+    transform: translate(-50%, -50%);
+    font-family: tahoma;
+}
+.team{
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+.team h1{
+    font-weight: 600vh;
+    font-family: impact;
+}
+.author-card{
+    margin-top: 20px;
+    box-shadow: 0 20px 30px rgba(14, 14, 14, 0.4);
+    width: 200px;
+    height: 400px;
+}
+.contact{
+    color: black;
+    background-color: rgb(141, 131, 131);
+    box-shadow: 0 20px 30px rgba(14, 14, 14, 0.4);
+    width: 70px;
+    height: 40px;
+}
+.contact:hover{
+    background-color: rgba(182, 182, 182, 0.966);
+}
+.sticky {
+    position:fixed;
+    width:100%;
+    z-index:1
+}
+#body{
+    transition: 1s;
+}
+#help{
+    position: fixed;
+    z-index: 2;
+    top: 70%;
+    color: white;
+    background-color: black;
+    transition: 1s;
+}
+
+.openbtn{
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    background-color: red;
+    position: fixed;
+    z-index: 1;
+    width: 50px;
+   float: left;
+    border-radius: 50%;
+}
+
+/** Footer **/
+.footer{
+    background-color: rgb(112, 112, 112);
+    
+    border: none;
+    width: 100%;
+}

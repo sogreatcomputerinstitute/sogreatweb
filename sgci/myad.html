@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate</title>
+  <link rel="icon" href="images/logo.PNG" >
+</head>
+<body>
+  <center>
+    <h1>Thanks For Coming to our Donate / Sponsor Page <br> Please Choose one of the option to continue</h1>
+    <div class="sponsor">
+      <h1 id="sec">Sponsor</h1>
+      
+      <button onclick="openspon()" id="spon">
+<img src="images/arrow.PNG" >
+</button>
+<div id="sponsor-main">
+<p id="p">Spon</p>
+</div>
+</a>
+    </div>
+    <div class="donate">
+
+    </div>
+  </center>
+  <style>
+    button{
+      transition: 1s;
+      background: none;
+      border: none;
+    }
+    p{
+      float: right;
+    }
+    .sponsor{
+      width: 200px;
+    }
+    img{
+      width: 40px;
+    }
+    #sponsor-main{
+      height: 0;
+      transition: 1s;
+    }
+    #p{
+      font-size: 0;
+      transition: 2s;
+      float: left;
+    }
+    #sec{
+      float: right;
+    }
+  </style>
+  <script>
+    function openspon(){
+      document.getElementById("spon").style.rotate = "180deg";
+      document.getElementById("sponsor-main").style.width = "200px";
+      document.getElementById("sponsor-main").style.height = "200px";
+      document.getElementById("p").style.fontSize = "14px";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<style>
+  input[type=text], input[type=email], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    input[type=text]:focus{
+        border: 1px solid aqua;
+    }
+    
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin-left: 60px;
+    }
+    </style>
+    </head>
+    <body>
+    <center>
+    <h3>Comment</h3>
+    </center>
+    <div class="container">
+      <form >
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+          <label for="email"> Email
+              <input type="email" placeholder="Email" name="email">
+          </label>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+    
+        <label for="subject">Tell Us What You Know</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+    
+        <input type="submit" value="Submit" onclick="alert('Thanks For commenting we will recieve the message Click Ok to continue!!')">
+      </form>

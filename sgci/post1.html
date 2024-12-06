@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="post1.css">
+        <link rel="icon" href="images/logo.PNG">
+        <title>SGCI BLOG</title>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="about.js"></script>
+    </head>
+    <body>
+      <center>
+            <div class="intro">
+                <img src="images/midlogo.PNG" >
+            </div></center>
+            <div id="nav-bar">
+                <button onclick="opennav()" class="opennav" id="o">&#9776;</button>
+                <a href="javascript:void(0)" onclick="closenav()" id="closenav" style="position: absolute; left: 90%;">X</a>
+                <a href="index.html" id="close-home">
+                    <img src="images/pop.PNG">
+                    <span>Home</span>
+                </a>
+                <a href="aboutus.html" id="close-about">
+                    <img src="images/about.PNG">
+                    <span>About Us</span>
+                </a>
+                <a href="error.html" id="close-game">
+                    <img src="images/gam.PNG" >
+                    <span>Games</span>
+                </a>
+                <a href="error.html" id="close-social">
+                    <img src="images/soc.PNG" >
+                    <span>Social</span>
+                </a>
+            <li><a href="error.html">Coding & More</a></li>
+           
+        </div>
+        <article>
+        <div id="main">
+        <h1 class="heading" >How To Upgrade and Downgrade your system (OS) <br> <i>Operating System</i></h1>
+        <p class="wel" > Upgrading or downgrading your operating system (OS) can significantly impact your computer's performance, <br> compatibility, and features. Whether you're looking to access the latest features or revert to <br> a previous version for stability, this guide will help you through the process.</p>
+        <h2>Upgrading Your Operating System</h2>
+        <p>1. Check Compatibility</p>
+        <p>Before you begin, ensure that your hardware meets the requirements for the new OS version. Check the official website for the minimum specifications.</p>
+        <h2>2. Back Up Your Data</h2>    
+        <p>Always back up important files and data before upgrading. Use an external hard drive or a cloud storage service to ensure you don’t lose any critical information.</p>
+        <h2>3. Download the Upgrade</h2>
+        <p>Most operating systems offer a straightforward upgrade path:</p>
+        <p>- Windows: Use Windows Update or download the Media Creation Tool from the Microsoft website. <br>
+            - macOS: Open the App Store and search for the latest version. <br>
+            - Linux: Check your distribution’s package manager for available upgrades.</p>
+        <h2>4. Follow Installation Instructions</h2>
+        <p>Once you have the upgrade files: <br>
+            - Windows: Run the setup and follow on-screen prompts. <br>
+            - macOS:Click “Get” to download and install. <br>
+            - Linux: Use terminal commands or your package manager to start the upgrade.</p>
+        <p>5. Complete the Installation</p>
+        <p>After the installation process starts, your computer may restart several times. Follow any prompts to finalize the setup, such as logging into your account or adjusting settings. </p>
+        <h2>6. Update Drivers and Applications</h2>
+        <p>After upgrading, ensure all drivers and applications are compatible with the new OS. Check for updates in Device Manager (Windows) or through System Preferences (macOS).</p>
+        <h2>Downgrading Your Operating System</h2>
+        <p> <b> 1. Assess Your Reasons</p></b>
+        <p>Consider why you want to downgrade. If it’s due to software incompatibility or performance issues, make sure the older version will resolve these problems.</p>
+        <p> <b>  2. Back Up Your Data <br></b>
+            Just like with an upgrade, back up your data before downgrading. This ensures you can restore your files after the process.</p>
+        <p> <b> 3. Obtain the Previous Version <br></b>
+            You will need installation media for the version you want to downgrade to: <br>
+            - Windows: Download a previous version from Microsoft if available or use an old installation disc. <br>
+            - macOS: Use a Time Machine backup or find the installer for an earlier version in the App Store. <br>
+            - Linux: Access your distribution’s website to find older releases. <br></p>
+        <p> <b> 4. Create Installation Media (if needed) <br></b>
+            For some OS versions, you may need to create a bootable USB drive: <br>
+            - Windows: Use the Media Creation Tool. <br>
+            - macOS: Use the Terminal to create a bootable installer. <br>
+            - Linux: Use tools like Rufus (for Windows) or the Startup Disk Creator (for Ubuntu).
+        </p>
+        <p> <b> 5. Reinstall the Older OS <br></b>
+            Insert your installation media and restart your computer. Boot from the media (you may need to change BIOS settings). Follow the prompts to install the older OS. <br>
+            - For Windows, choose “Custom Installation” to format the drive and install. <br>
+            - For macOS, select “Disk Utility” to erase the current OS. <br>
+            - For Linux, follow the installation guide specific to your distribution.</p>
+            <p>6. Restore Your Data
+                After the installation is complete, restore your files from the backup you created earlier. Reinstall applications as needed.</p>
+        <p> <b>Conclusion...</b> 
+            Upgrading or downgrading your operating system can help you optimize your computer's performance and functionality. Always remember to back up your data and ensure compatibility with your hardware. Whether you're seeking the latest features or returning to a familiar interface, following these steps will make the transition smoother.</p>
+        </article>
+    </div>
+   
+<style>
+    input[type=text], input[type=email], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type=text]:hover{
+          border: 1px solid aqua;
+      }
+      
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        float: right;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-left: 60px;
+      }
+      </style>
+      </head>
+      <body>
+      <center>
+      <h3>Comment</h3>
+      </center>
+      <div class="container">
+        <form static-form static-form-id="comment">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="someone@example.com">
+          <label for="subject">Tell Us What You Know</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit" onclick="alert('Thanks For commenting we will recieve the message Click Ok to continue!!')">
+        </form>
+    </body>
