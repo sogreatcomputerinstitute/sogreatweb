@@ -11,10 +11,7 @@
     height: 70px;
     line-height: 70px;
 }
-.intro img{
-    height: 70px;
-    border: none;
-}
+
 a{
     text-decoration: none;
     color: white;
@@ -90,32 +87,94 @@ a{
 
 /** End Of Navigation Bar **/
 
-.first-post{
-    border: 1px solid black;
-    box-shadow: 0 20px 30px rgba(0, 0,0,0.1);
-    margin-top: 40px;
-    height: 160px;
-    overflow: auto;
-    width: 250px;
-    margin-bottom: 30px;
-}
-.first-post h1{
-    font-size: 25px;
-    font-weight: 600;
-    font-style: bold;
-}
-.first-post a button{
-    float: bottom;
-    width: 100%;
-    background-color: green;
-    color: white;
-    padding: 10px;
-}
+
 #profile{
     border-radius: 10%;
     width: 50px;
 
 }
+/* Sign-in box styling */
+.signin-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: block;
+    width: 300px;
+    z-index: 1000;
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Sign-up button styling */
+.signup-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+}
+/* second blog test */
+.blog-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  .blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .blog-box img{
+    width: 100%;
+    border-radius: 10%;
+    margin: none; 
+    height: 60%;
+  }
+
+  .blog-summary {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  .read-more-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
 
 /** Footer**/
 .footer{
