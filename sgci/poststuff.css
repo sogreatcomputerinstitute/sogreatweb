@@ -1,0 +1,23 @@
+/* Styling for the posts container */
+#postsContainer {
+    display: flex;
+    gap: 10px;  /* Space between each post */
+    margin-top: 20px;
+}
+
+/* Styling for each individual post */
+.post {
+    display: flex; /* Use flexbox for the name and content columns */
+    gap: 20px;  /* Space between the name and post content */
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Styling for the name column */
+.post-name {
+    font-weight: bold;
+    flex: 0 1 150px; /* Flexbox column with fixed width */
+    min-width: 150px; /* Prevent shrinking */
+    text-align: right;  /* Align name to the right */
+}

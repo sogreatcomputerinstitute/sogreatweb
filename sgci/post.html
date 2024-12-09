@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Submission</title>
+
+    <!-- Link to external CSS (you can include styles here or in a separate CSS file) -->
+    <style>
+        /* Styling for the posts container */
+        #postsContainer {
+            display: flex;
+            flex-direction: column;  /* Display posts vertically */
+            gap: 10px;  /* Space between each post */
+            margin-top: 20px;
+        }
+
+        /* Styling for each individual post */
+        .post {
+            display: flex; /* Use flexbox for the name and content columns */
+            gap: 20px;  /* Space between the name and post content */
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        /* Styling for the name column */
+        .post-name {
+            font-weight: bold;
+            flex: 0 1 150px; /* Flexbox column with fixed width */
+            min-width: 150px; /* Prevent shrinking */
+            text-align: right;  /* Align name to the right */
+        }
+
+        /* Styling for the post content column */
+        .post-content {
+            flex: 1;  /* Take the remaining space */
+            word-wrap: break-word;  /* Prevent long words from breaking the layout */
+        }
+
+        /* Styling for the form */
+        #postForm {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #postForm input, #postForm textarea, #postForm button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #postForm button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #postForm button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <!-- Post Submission Form -->
+    <div class="Comment">
+    <h1>Post</h1>
+    <form id="postForm">
+        <input style="width: 100%;" type="text" id="name" placeholder="Your name" />
+        <textarea style="width: 100%;" id="post" placeholder="Write a post..."></textarea>
+        <button type="submit">Submit</button>
+    </form></div></center>
+
+    <!-- Container for displaying posts -->
+    <div id="postsContainer">
+        <!-- Posts will be dynamically loaded here -->
+    </div>
+
+    <!-- Link to external JavaScript (you can add this script inside a script tag or in a separate .js file) -->
+    <script>
+        // JavaScript for handling form submission and loading posts
+
+        document.getElementById('postForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission from refreshing the page
+
+            let name = document.getElementById('name').value;
+            let post = document.getElementById('post').value;
+
+            // Check if inputs are valid
+            if (!name || !post) {
+                alert("Both name and post are required!");
+                return;
+            }
+
+            // Perform AJAX request to save the post (submit_post.php)
+            fetch('submit_post.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `name=${encodeURIComponent(name)}&post=${encodeURIComponent(post)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    loadPosts(); // Reload posts after successful submission
+                    document.getElementById('name').value = ''; // Clear the input fields
+                    document.getElementById('post').value = '';
+                } else {
+                    alert('Failed to submit post: ' + (data.message || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error submitting post');
+            });
+        });
+
+        // Function to load posts (load_posts.php)
+        function loadPosts() {
+            fetch('load_posts.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        const postsContainer = document.getElementById('postsContainer');
+                        postsContainer.innerHTML = ''; // Clear existing posts
+
+                        data.posts.forEach(post => {
+                            const postElement = document.createElement('div');
+                            postElement.classList.add('post');
+
+                            // Create a container for the name and post content
+                            const nameColumn = document.createElement('div');
+                            nameColumn.classList.add('post-name');
+                            nameColumn.textContent = post.name;
+
+                            const postColumn = document.createElement('div');
+                            postColumn.classList.add('post-content');
+                            postColumn.textContent = post.post;
+
+                            // Append the name and content columns to the post element
+                            postElement.appendChild(nameColumn);
+                            postElement.appendChild(postColumn);
+
+                            // Append the post element to the container
+                            postsContainer.appendChild(postElement);
+                        });
+                    } else {
+                        console.error('Error loading posts:', data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading posts:', error);
+                });
+        }
+
+        // Load posts on page load
+        document.addEventListener('DOMContentLoaded', loadPosts);
+    </script>
+</body>
+</html>
