@@ -1,27 +1,27 @@
 <?php
-header('Content-Type: application/json');
+// Ensure that you have database connection
+// (e.g., $pdo is your PDO instance or you can use mysqli)
 
-// Check if name and post are provided
-if (isset($_POST['name']) && isset($_POST['post'])) {
-    $name = strip_tags($_POST['name']);  // Sanitize input
-    $post = strip_tags($_POST['post']);  // Sanitize input
+// Check if form data is submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data
+    $name = $_POST['name'] ?? '';
+    $post = $_POST['post'] ?? '';
 
-    // Create a string with name and post content
-    $postContent = json_encode([
-        'name' => $name,
-        'post' => $post
-    ]);
-
-    // Append the post to a text file (make sure the file is writable)
-    $file = 'posts.txt'; 
-    if (file_put_contents($file, $postContent . "\n", FILE_APPEND) !== false) {
-        // Success: Send a success response
-        echo json_encode(['status' => 'success']);
-    } else {
-        // Error: Failed to write to file
-        echo json_encode(['status' => 'error', 'message' => 'Failed to save post']);
+    // Simple validation
+    if (empty($name) || empty($post)) {
+        echo json_encode(['status' => 'error', 'message' => 'Both name and post are required']);
+        exit;
     }
+
+    // Prepare your SQL query (replace this with actual database insertion logic)
+    // Example using PDO
+    $stmt = $pdo->prepare("INSERT INTO posts (name, post_content) VALUES (:name, :post)");
+    $stmt->execute(['name' => $name, 'post_content' => $post]);
+
+    // Return success message
+    echo json_encode(['status' => 'success']);
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'Invalid input']);
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
 }
 ?>
