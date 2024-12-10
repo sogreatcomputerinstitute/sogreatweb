@@ -1,20 +1,23 @@
 <?php
-// Ensure you have database connection
-// (e.g., $pdo is your PDO instance or you can use mysqli)
+header('Content-Type: application/json');
 
-// Fetch posts from the database
-$stmt = $pdo->query("SELECT name, post_content FROM posts ORDER BY created_at DESC");
-$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Check if the file exists and is readable
+$file = 'posts.txt';
+if (file_exists($file)) {
+    // Read the file contents
+    $posts = file_get_contents($file);
+    
+    // Split the posts into an array (one post per line)
+    $postArray = explode("\n", trim($posts));
+    
+    // Decode JSON and store the posts in an array
+    $postsDecoded = array_map(function($post) {
+        return json_decode($post, true);  // Decode each post as an array
+    }, $postArray);
 
-// Prepare posts to return
-$postsArray = [];
-foreach ($posts as $post) {
-    $postsArray[] = $post['name'] . ': ' . $post['post_content'];
+    // Return the posts as a JSON response
+    echo json_encode(['status' => 'success', 'posts' => $postsDecoded]);
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'No posts found']);
 }
-
-// Return posts in JSON format
-echo json_encode([
-    'status' => 'success',
-    'posts' => $postsArray
-]);
 ?>
